@@ -1,53 +1,58 @@
-//Progression 1 - create a Manager array and return it
-let managerName = "Alex Ferguson";
-let managerAge = 78;
-let currentTeam = "Manchester FC";
-let trophiesWon = 27;
+// Challenge 1: Store the user's data in localStorage
+const storeUserData = (userData) => {
+  Object.entries(userData).forEach(([key, value]) => {
+      localStorage.setItem(key, JSON.stringify(value));
+  });
+  console.log(localStorage);
+};
 
-//Write your function here
+// Challenge 2: Get the user's data from localStorage and print
+const getUserData = () => {
+  const retrievedUserData = {};
+  Object.keys(userData).forEach(key => {
+      retrievedUserData[key] = JSON.parse(localStorage.getItem(key));
+  });
+  console.log(retrievedUserData);
+};
 
-// Don't edit the following code
-try {
-  var manager = createManager(
-    managerName,
-    managerAge,
-    currentTeam,
-    trophiesWon
-  );
-} catch (e) {
-  // do nothing - expected error
-}
+// Challenge 3: Remove "state" data from localStorage
+const removeStateFromLocalStorage = () => {
+  localStorage.removeItem('state');
+  console.log(localStorage);
+};
 
-//Progression 2 - create a formation object and return it
-var formation = [4, 4, 3];
+// Challenge 4: Clear all data from localStorage
+const clearLocalStorage = () => {
+  localStorage.clear();
+  console.log(localStorage);
+};
 
-//write your function here
+// Challenge 5: Convert object to string using JSON.stringify()
+const stringifyObject = (obj) => {
+  const stringify = JSON.stringify(obj);
+  console.log(stringify);
+};
 
-// Dont edit the following code
+// Usage of the above functions
+const userData = {
+  firstName: 'Dhanush',
+  lastName: 'kalki',
+  age: 18,
+  country: 'India',
+  state: 'Tamil Nadu',
+};
 
-try {
-  var formationObject = createFormation(formation);
-} catch (e) {
-  //do nothing
-}
+storeUserData(userData);
+getUserData();
+removeStateFromLocalStorage();
+clearLocalStorage();
 
-//Progression 3 - Filter players that debuted in ___ year
+const userObject = {
+  firstName: 'Rajat',
+  age: 25,
+  skills: ['HTML', 'CSS', 'JS', 'React'],
+};
 
-//Progression 4 - Filter players that play at the position _______
+stringifyObject(userObject);
 
-//Progression 5 - Filter players that have won ______ award
-
-//Progression 6 - Filter players that won ______ award ____ times
-
-//Progression 7 - Filter players that won ______ award and belong to ______ country
-
-//Progression 8 - Filter players that won atleast ______ awards, belong to ______ team and are younger than ____
-
-//Progression 9 - Sort players in descending order of their age
-
-//Progression 10 - Sort players beloging to _____ team in descending order of awards won
-
-//Challenge 1 - Sort players that have won _______ award _____ times and belong to _______ country in alphabetical order of their names
-
-//Challenge 2 - Sort players that are older than _____ years in alphabetical order
-//Sort the awards won by them in reverse chronological order
+// Continue with the rest of the code for other challenges...
